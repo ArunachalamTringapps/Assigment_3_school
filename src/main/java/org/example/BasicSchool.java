@@ -22,7 +22,6 @@ class BasicSchool {
         ArrayList<String> myList = new ArrayList<>(Arrays.asList(gra));
         myList.add(temp);
         gra = myList.toArray(gra);
-        // System.out.println(Arrays.toString(gra));
         System.out.println("Enter the credit points");
         double credit = sc.nextDouble();
         credittot += credit;
@@ -47,7 +46,8 @@ class BasicSchool {
         int n = sc.nextInt();
         String[] gra = new String[n];
         double credit;
-        double tot = 0.00, credittot = 0.00;
+        double tot = 0.00;
+        double credittot = 0.00;
         sc.nextLine();
         for (int i = 0; i < n; i++) {
 
@@ -80,8 +80,7 @@ class BasicSchool {
                     String dis = sh.display();
                     System.out.println(dis);
                 }
-                case 3 -> {
-                }
+                case 3 -> System.out.println("Thanks for coming");
                 default -> System.out.println("Enter the correct choice:");
             }
         } while (ch != 3);
