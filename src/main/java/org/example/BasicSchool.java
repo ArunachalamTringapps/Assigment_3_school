@@ -80,7 +80,6 @@ class BasicSchool {
                     String dis = sh.display();
                     System.out.println(dis);
                 }
-                case 3 -> System.out.println("Thanks for coming");
                 default -> System.out.println("Enter the correct choice:");
             }
         } while (ch != 3);
