@@ -1,5 +1,7 @@
 package org.example;
 import java.util.*;
+import java.util.logging.Logger;
+
 class BasicSchool {
     private final String name;
     private double credittot;
@@ -7,6 +9,7 @@ class BasicSchool {
     private double tot;
     private double gpa;
     static Scanner sc = new Scanner(System.in);
+    static Logger l=Logger.getLogger("com.api.jar");
 
     BasicSchool(String name, Double creditot, String[] gra, double tot, double gpa) {
         this.name = name;
@@ -17,12 +20,12 @@ class BasicSchool {
     }
 
     public void update() {
-        System.out.println("Enter the subject grade to add:");
+        l.info("Enter the subject grade to add:");
         String temp = sc.nextLine();
         ArrayList<String> myList = new ArrayList<>(Arrays.asList(gra));
         myList.add(temp);
         gra = myList.toArray(gra);
-        System.out.println("Enter the credit points");
+        l.info("Enter the credit points");
         double credit = sc.nextDouble();
         credittot += credit;
         Grade g = new Grade(temp);
@@ -39,10 +42,10 @@ class BasicSchool {
     public static void main(String[] args) {
 
         String temp;
-        System.out.println("Welcome to RRR School");
-        System.out.println("Enter your name:");
+        l.info("Welcome to RRR School");
+        l.info("Enter your name:");
         String name = sc.nextLine();
-        System.out.println("Enter no of Subjects:");
+        l.info("Enter no of Subjects:");
         int n = sc.nextInt();
         String[] gra = new String[n];
         double credit;
@@ -51,9 +54,9 @@ class BasicSchool {
         sc.nextLine();
         for (int i = 0; i < n; i++) {
 
-            System.out.println("Enter the Subject grade in Capital letter:");
+            l.info("Enter the Subject grade in Capital letter:");
             temp = sc.nextLine();
-            System.out.println("Enter the credit points");
+            l.info("Enter the credit points");
             credit = sc.nextDouble();
             sc.nextLine();
             credittot += credit;
@@ -70,8 +73,8 @@ class BasicSchool {
 
         int ch;
         do {
-            System.out.println("1.update your GPA\n2.display your GPA\n3.exit");
-            System.out.println("Enter the choice ");
+            l.info("1.update your GPA\n2.display your GPA\n3.exit");
+            l.info("Enter the choice ");
             ch = sc.nextInt();
             sc.nextLine();
             switch (ch) {
@@ -80,7 +83,7 @@ class BasicSchool {
                     String dis = sh.display();
                     System.out.println(dis);
                 }
-                default -> System.out.println("Enter the correct choice:");
+                default -> l.info("Enter the correct choice:");
             }
         } while (ch != 3);
 
@@ -89,6 +92,7 @@ class BasicSchool {
 
 class Grade {
     private final String temp;
+    Logger l=Logger.getLogger("com.api.jar");
 
     Grade(String temp) {
         this.temp = temp;
@@ -102,7 +106,7 @@ class Grade {
             case "C" -> gradetemp = 2;
             case "D" -> gradetemp = 1;
             case "F" -> gradetemp = 0;
-            default -> System.out.println("Enter the correct Grade");
+            default -> l.info("Enter the correct Grade");
         }
 
         return gradetemp;
