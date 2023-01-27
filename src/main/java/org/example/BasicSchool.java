@@ -1,5 +1,6 @@
 package org.example;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class BasicSchool {
@@ -81,7 +82,7 @@ class BasicSchool {
                 case 1 -> sh.update();
                 case 2 -> {
                     String dis = sh.display();
-                    System.out.println(dis);
+                    l.log(Level.INFO, () ->  dis);
                 }
                 default -> l.info("Enter the correct choice:");
             }

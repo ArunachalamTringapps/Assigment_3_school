@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="609699c7-700a-4fad-b98e-888542265c4e" name="Changes" comment="small changes">
+    <list default="true" id="609699c7-700a-4fad-b98e-888542265c4e" name="Changes" comment="updated withour code smell">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BasicSchool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BasicSchool.java" afterDir="false" />
     </list>
@@ -76,12 +76,20 @@
       <option name="project" value="LOCAL" />
       <updated>1674754710911</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="updated withour code smell">
+      <created>1674821086721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674821086721</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="file and small changes made" />
     <MESSAGE value="small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small changes" />
+    <MESSAGE value="updated withour code smell" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated withour code smell" />
   </component>
 </project>
