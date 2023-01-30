@@ -41,53 +41,56 @@ class BasicSchool {
     }
 
     public static void main(String[] args) {
+        try {
 
-        String temp;
-        l.info("Welcome to RRR School");
-        l.info("Enter your name:");
-        String name = sc.nextLine();
-        l.info("Enter no of Subjects:");
-        int n = sc.nextInt();
-        String[] gra = new String[n];
-        double credit;
-        double tot = 0.00;
-        double credittot = 0.00;
-        sc.nextLine();
-        for (int i = 0; i < n; i++) {
-
-            l.info("Enter the Subject grade in Capital letter:");
-            temp = sc.nextLine();
-            l.info("Enter the credit points");
-            credit = sc.nextDouble();
+            String temp;
+            l.info("Welcome to RRR School");
+            l.info("Enter your name:");
+            String name = sc.nextLine();
+            l.info("Enter no of Subjects:");
+            int n = sc.nextInt();
+            String[] gra = new String[n];
+            double credit;
+            double tot = 0.00;
+            double credittot = 0.00;
             sc.nextLine();
-            credittot += credit;
-            gra[i] = temp;
-            Grade g = new Grade(temp);
-            double gradetemp = g.gradeing();
-            tot = tot + (gradetemp * credit);
+            for (int i = 0; i < n; i++) {
 
-        }
+                l.info("Enter the Subject grade in Capital letter:");
+                temp = sc.nextLine();
+                l.info("Enter the credit points");
+                credit = sc.nextDouble();
+                sc.nextLine();
+                credittot += credit;
+                gra[i] = temp;
+                Grade g = new Grade(temp);
+                double gradetemp = g.gradeing();
+                tot = tot + (gradetemp * credit);
 
-
-        double gpa = tot / credittot;
-        BasicSchool sh = new BasicSchool(name, credittot, gra, tot, gpa);
-
-        int ch;
-        do {
-            l.info("1.update your GPA\n2.display your GPA\n3.exit");
-            l.info("Enter the choice ");
-            ch = sc.nextInt();
-            sc.nextLine();
-            switch (ch) {
-                case 1 -> sh.update();
-                case 2 -> {
-                    String dis = sh.display();
-                    l.log(Level.INFO, () ->  dis);
-                }
-                default -> l.info("Enter the correct choice:");
             }
-        } while (ch != 3);
 
+
+            double gpa = tot / credittot;
+            BasicSchool sh = new BasicSchool(name, credittot, gra, tot, gpa);
+
+            int ch;
+            do {
+                l.info("1.update your GPA\n2.display your GPA\n3.exit");
+                l.info("Enter the choice ");
+                ch = sc.nextInt();
+                sc.nextLine();
+                switch (ch) {
+                    case 1 -> sh.update();
+                    case 2 -> {
+                        String dis = sh.display();
+                        l.log(Level.INFO, () -> dis);
+                    }
+                    default -> l.info("Enter the correct choice:");
+                }
+            } while (ch != 3);
+        } catch (Exception ex) {
+            l.log(Level.INFO, () -> "Error Occur:" + ex);
+        }
     }
 }
 
