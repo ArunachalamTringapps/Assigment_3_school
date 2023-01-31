@@ -41,7 +41,7 @@ class BasicSchool {
     }
 
     public static void main(String[] args) {
-        try {
+
 
             String temp;
             l.info("Welcome to RRR School");
@@ -88,9 +88,7 @@ class BasicSchool {
                     default -> l.info("Enter the correct choice:");
                 }
             } while (ch != 3);
-        } catch (Exception ex) {
-            l.log(Level.INFO, () -> "Error Occur:" + ex);
-        }
+
     }
 }
 
