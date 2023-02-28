@@ -10,7 +10,7 @@ class BasicSchool {
     private double tot;
     private double gpa;
     static Scanner sc = new Scanner(System.in);
-    static Logger l=Logger.getLogger("com.api.jar");
+    static Logger l=Logger.getLogger(BasicSchool.class.getName());
 
     BasicSchool(String name, Double creditot, String[] gra, double tot, double gpa) {
         this.name = name;
@@ -94,7 +94,7 @@ class BasicSchool {
 
 class Grade {
     private final String temp;
-    Logger l=Logger.getLogger("com.api.jar");
+    Logger l=Logger.getLogger(BasicSchool.class.getName());
 
     Grade(String temp) {
         this.temp = temp;
